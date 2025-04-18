@@ -2,10 +2,12 @@
 
 A hard eval for multi-modal models.
 
-This is based on 100 photographs I took of organisms in Southern Africa, with robust species-level identifications. Each comes with up to four other 'distractors' from the same family, and the goal is to correctly guess which is the correct species name. 
+![preliminary results](results.png)
+
+This is based on 100 photographs I took of organisms in Southern Africa, with robust species-level identifications. Each comes with up to four other related 'distractors', and the goal is to correctly guess which is the correct species name. 
 
 To run for a model:
-`python run_eval.py "gpt-4.1-nano-2025-04-14" --samples 1`
+`python run_eval.py "gpt-4.1-nano-2025-04-14" --samples 10`
 
 To run for the set of models I used:
 `./run_evals.sh`
