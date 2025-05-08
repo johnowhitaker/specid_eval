@@ -10,6 +10,7 @@ import base64
 import random
 import argparse
 import io
+import time
 from tqdm import tqdm
 from datasets import load_dataset
 import google.genai as genai
@@ -68,7 +69,12 @@ def ask_gemini(img_b64, opts, model_name):
     """Query Gemini model with image and options"""
     client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
     tools = types.Tool(function_declarations=[ANSWER_TOOL["function"]])
-    config = types.GenerateContentConfig(tools=[tools])
+    tool_config = types.ToolConfig(
+        function_calling_config=types.FunctionCallingConfig(
+            mode="ANY", allowed_function_names=["select_answer"] # Force function call
+        )
+    )
+    config = types.GenerateContentConfig(tools=[tools], tool_config=tool_config)
 
     text = (
         "Choose the correct species for this photo and "
