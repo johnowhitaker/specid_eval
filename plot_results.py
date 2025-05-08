@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 def load_scores(pattern="results*.json"):
     """Return list of (model_name, accuracy_percent)."""
-    records = []
+    records = [("Johno", 71)]
     for path in glob.glob(pattern):
         with open(path) as f:
             data = json.load(f)
@@ -33,13 +33,13 @@ def plot(scores, outfile="results.png"):
     ax.set_yticklabels(labels)
     ax.invert_yaxis()                     # best at top
     ax.set_xlabel("Accuracy (%)")
-    ax.set_xlim(20, 70)                   # as requested
+    ax.set_xlim(20, 75)                   # as requested
     ax.set_title("SpecID MCQ Accuracy across LLMs")
     ax.grid(axis="x", linestyle="--", alpha=0.3)
 
     # annotate bars
     for v, y in zip(values, y_pos):
-        ax.text(v + 1, y, f"{v:.1f} %", va="center")
+        ax.text(v + 1, y, f"{int(v)} %", va="center")
 
     plt.tight_layout()
     fig.savefig(outfile, dpi=180)

@@ -1,7 +1,7 @@
 {
   "model": "gemini-2.5-flash-preview-04-17",
-  "accuracy": 0.48,
-  "correct": 48,
+  "accuracy": 0.53,
+  "correct": 53,
   "total": 100,
   "results": [
     {
@@ -12,8 +12,8 @@
         "Abachrysa eureka"
       ],
       "correct_answer": 1,
-      "predicted_answer": 1,
-      "is_correct": true
+      "predicted_answer": 0,
+      "is_correct": false
     },
     {
       "observation_id": 101874363,
@@ -37,8 +37,8 @@
         "Orientattus minutus"
       ],
       "correct_answer": 0,
-      "predicted_answer": 3,
-      "is_correct": false
+      "predicted_answer": 0,
+      "is_correct": true
     },
     {
       "observation_id": 150809650,
@@ -50,7 +50,7 @@
         "Rhomborhina fuscipes"
       ],
       "correct_answer": 3,
-      "predicted_answer": 1,
+      "predicted_answer": 2,
       "is_correct": false
     },
     {
@@ -76,8 +76,8 @@
         "Parmatergus lens"
       ],
       "correct_answer": 0,
-      "predicted_answer": 3,
-      "is_correct": false
+      "predicted_answer": 0,
+      "is_correct": true
     },
     {
       "observation_id": 106732086,
@@ -102,8 +102,8 @@
         "Campylocentrum guarinae"
       ],
       "correct_answer": 1,
-      "predicted_answer": 3,
-      "is_correct": false
+      "predicted_answer": 1,
+      "is_correct": true
     },
     {
       "observation_id": 116139957,
@@ -115,8 +115,8 @@
         "Spilostethus furcula"
       ],
       "correct_answer": 4,
-      "predicted_answer": 0,
-      "is_correct": false
+      "predicted_answer": 4,
+      "is_correct": true
     },
     {
       "observation_id": 140474022,
@@ -141,9 +141,8 @@
         "Euryopis funebris"
       ],
       "correct_answer": 4,
-      "predicted_answer": null,
-      "is_correct": false,
-      "error": "No function call found in the response"
+      "predicted_answer": 0,
+      "is_correct": false
     },
     {
       "observation_id": 134599532,
@@ -166,8 +165,8 @@
         "Arthroleptis stenodactylus"
       ],
       "correct_answer": 2,
-      "predicted_answer": 1,
-      "is_correct": false
+      "predicted_answer": 2,
+      "is_correct": true
     },
     {
       "observation_id": 124420856,
@@ -205,9 +204,8 @@
         "Anatkina candidipes"
       ],
       "correct_answer": 2,
-      "predicted_answer": null,
-      "is_correct": false,
-      "error": "'NoneType' object is not subscriptable"
+      "predicted_answer": 1,
+      "is_correct": false
     },
     {
       "observation_id": 124420938,
@@ -229,9 +227,8 @@
         "Orientattus minutus"
       ],
       "correct_answer": 0,
-      "predicted_answer": null,
-      "is_correct": false,
-      "error": "No function call found in the response"
+      "predicted_answer": 1,
+      "is_correct": false
     },
     {
       "observation_id": 106732096,
@@ -255,7 +252,7 @@
         "Stiphropus affinis"
       ],
       "correct_answer": 3,
-      "predicted_answer": 0,
+      "predicted_answer": 1,
       "is_correct": false
     },
     {
@@ -293,8 +290,8 @@
         "Neda tredecimsignata"
       ],
       "correct_answer": 2,
-      "predicted_answer": 2,
-      "is_correct": true
+      "predicted_answer": 0,
+      "is_correct": false
     },
     {
       "observation_id": 112496693,
@@ -332,7 +329,7 @@
         "Metallyra wladimirii"
       ],
       "correct_answer": 0,
-      "predicted_answer": 1,
+      "predicted_answer": 3,
       "is_correct": false
     },
     {
@@ -357,8 +354,8 @@
         "Matagaia chromatopus"
       ],
       "correct_answer": 2,
-      "predicted_answer": 2,
-      "is_correct": true
+      "predicted_answer": 3,
+      "is_correct": false
     },
     {
       "observation_id": 107570960,
@@ -381,7 +378,7 @@
         "Rhampholeon marshalli"
       ],
       "correct_answer": 4,
-      "predicted_answer": 0,
+      "predicted_answer": 2,
       "is_correct": false
     },
     {
@@ -418,7 +415,7 @@
         "Pasilobus dippenaarae"
       ],
       "correct_answer": 2,
-      "predicted_answer": 1,
+      "predicted_answer": 3,
       "is_correct": false
     },
     {
@@ -429,8 +426,8 @@
         "Gastrida abdominalis"
       ],
       "correct_answer": 2,
-      "predicted_answer": 2,
-      "is_correct": true
+      "predicted_answer": 0,
+      "is_correct": false
     },
     {
       "observation_id": 107303700,
@@ -455,7 +452,7 @@
         "Idiothele mira"
       ],
       "correct_answer": 0,
-      "predicted_answer": 3,
+      "predicted_answer": 4,
       "is_correct": false
     },
     {
@@ -494,9 +491,8 @@
         "Diopsis aterrima"
       ],
       "correct_answer": 2,
-      "predicted_answer": null,
-      "is_correct": false,
-      "error": "No function call found in the response"
+      "predicted_answer": 2,
+      "is_correct": true
     },
     {
       "observation_id": 151608038,
@@ -521,8 +517,8 @@
         "Catoferia spicata"
       ],
       "correct_answer": 3,
-      "predicted_answer": 3,
-      "is_correct": true
+      "predicted_answer": 2,
+      "is_correct": false
     },
     {
       "observation_id": 134599498,
@@ -534,8 +530,8 @@
         "Bomis hippoponoi"
       ],
       "correct_answer": 3,
-      "predicted_answer": 3,
-      "is_correct": true
+      "predicted_answer": 0,
+      "is_correct": false
     },
     {
       "observation_id": 106732060,
@@ -595,8 +591,8 @@
         "Cacyreus lingeus"
       ],
       "correct_answer": 2,
-      "predicted_answer": 2,
-      "is_correct": true
+      "predicted_answer": 0,
+      "is_correct": false
     },
     {
       "observation_id": 116140025,
@@ -621,8 +617,8 @@
         "Rhopalurus caribensis"
       ],
       "correct_answer": 3,
-      "predicted_answer": 0,
-      "is_correct": false
+      "predicted_answer": 3,
+      "is_correct": true
     },
     {
       "observation_id": 151608035,
@@ -633,8 +629,8 @@
         "Macropopillia arrowi"
       ],
       "correct_answer": 0,
-      "predicted_answer": 0,
-      "is_correct": true
+      "predicted_answer": 3,
+      "is_correct": false
     },
     {
       "observation_id": 151608022,
@@ -646,9 +642,8 @@
         "Pardaleodes tibullus"
       ],
       "correct_answer": 3,
-      "predicted_answer": null,
-      "is_correct": false,
-      "error": "No function call found in the response"
+      "predicted_answer": 4,
+      "is_correct": false
     },
     {
       "observation_id": 134599522,
@@ -660,8 +655,8 @@
         "Tirumala euploeomorpha"
       ],
       "correct_answer": 2,
-      "predicted_answer": 0,
-      "is_correct": false
+      "predicted_answer": 2,
+      "is_correct": true
     },
     {
       "observation_id": 106732053,
@@ -686,7 +681,7 @@
         "Nandicius vallisflorum"
       ],
       "correct_answer": 0,
-      "predicted_answer": 4,
+      "predicted_answer": 1,
       "is_correct": false
     },
     {
@@ -699,9 +694,8 @@
         "Pardopsis punctatissima"
       ],
       "correct_answer": 3,
-      "predicted_answer": null,
-      "is_correct": false,
-      "error": "No function call found in the response"
+      "predicted_answer": 3,
+      "is_correct": true
     },
     {
       "observation_id": 152370933,
@@ -713,9 +707,8 @@
         "Hemidactylus mabouia"
       ],
       "correct_answer": 4,
-      "predicted_answer": null,
-      "is_correct": false,
-      "error": "No function call found in the response"
+      "predicted_answer": 4,
+      "is_correct": true
     },
     {
       "observation_id": 107303677,
@@ -740,8 +733,8 @@
         "Acraea eugenia"
       ],
       "correct_answer": 0,
-      "predicted_answer": 0,
-      "is_correct": true
+      "predicted_answer": 3,
+      "is_correct": false
     },
     {
       "observation_id": 103260747,
@@ -752,7 +745,7 @@
         "Pegylis sommeri"
       ],
       "correct_answer": 3,
-      "predicted_answer": 2,
+      "predicted_answer": 0,
       "is_correct": false
     },
     {
@@ -778,8 +771,8 @@
         "Thinornis placidus"
       ],
       "correct_answer": 0,
-      "predicted_answer": 2,
-      "is_correct": false
+      "predicted_answer": 0,
+      "is_correct": true
     },
     {
       "observation_id": 124420875,
@@ -791,8 +784,8 @@
         "Plexippoides tristis"
       ],
       "correct_answer": 1,
-      "predicted_answer": 4,
-      "is_correct": false
+      "predicted_answer": 1,
+      "is_correct": true
     },
     {
       "observation_id": 140474033,
@@ -817,8 +810,8 @@
         "Crustulina starmuehlneri"
       ],
       "correct_answer": 0,
-      "predicted_answer": 1,
-      "is_correct": false
+      "predicted_answer": 0,
+      "is_correct": true
     },
     {
       "observation_id": 106732051,
@@ -868,9 +861,8 @@
         "Indothele lanka"
       ],
       "correct_answer": 2,
-      "predicted_answer": null,
-      "is_correct": false,
-      "error": "No function call found in the response"
+      "predicted_answer": 2,
+      "is_correct": true
     },
     {
       "observation_id": 101874410,
@@ -907,9 +899,8 @@
         "Ostearius melanopygius"
       ],
       "correct_answer": 4,
-      "predicted_answer": null,
-      "is_correct": false,
-      "error": "No function call found in the response"
+      "predicted_answer": 4,
+      "is_correct": true
     },
     {
       "observation_id": 140474037,
@@ -921,9 +912,8 @@
         "Pignus simoni"
       ],
       "correct_answer": 4,
-      "predicted_answer": null,
-      "is_correct": false,
-      "error": "No function call found in the response"
+      "predicted_answer": 4,
+      "is_correct": true
     },
     {
       "observation_id": 103260740,
@@ -973,7 +963,7 @@
         "Frieseomelitta languida"
       ],
       "correct_answer": 1,
-      "predicted_answer": 4,
+      "predicted_answer": 2,
       "is_correct": false
     },
     {
@@ -986,8 +976,8 @@
         "Precis antilope"
       ],
       "correct_answer": 4,
-      "predicted_answer": 4,
-      "is_correct": true
+      "predicted_answer": 1,
+      "is_correct": false
     },
     {
       "observation_id": 101080311,
@@ -999,8 +989,8 @@
         "Pericyma mendax"
       ],
       "correct_answer": 4,
-      "predicted_answer": 4,
-      "is_correct": true
+      "predicted_answer": 0,
+      "is_correct": false
     },
     {
       "observation_id": 124420925,
@@ -1025,7 +1015,7 @@
         "Pardaleodes edipus"
       ],
       "correct_answer": 0,
-      "predicted_answer": 4,
+      "predicted_answer": 2,
       "is_correct": false
     },
     {
@@ -1051,7 +1041,7 @@
         "Phylloneta impressa"
       ],
       "correct_answer": 0,
-      "predicted_answer": 1,
+      "predicted_answer": 2,
       "is_correct": false
     },
     {
@@ -1090,8 +1080,8 @@
         "Sinocanthium shuangqiu"
       ],
       "correct_answer": 1,
-      "predicted_answer": 1,
-      "is_correct": true
+      "predicted_answer": 0,
+      "is_correct": false
     },
     {
       "observation_id": 106732045,
@@ -1152,9 +1142,8 @@
         "Camaricus castaneiceps"
       ],
       "correct_answer": 1,
-      "predicted_answer": null,
-      "is_correct": false,
-      "error": "No function call found in the response"
+      "predicted_answer": 2,
+      "is_correct": false
     },
     {
       "observation_id": 83153470,
@@ -1176,8 +1165,8 @@
         "Zizeeria knysna"
       ],
       "correct_answer": 3,
-      "predicted_answer": 0,
-      "is_correct": false
+      "predicted_answer": 3,
+      "is_correct": true
     },
     {
       "observation_id": 124420850,
@@ -1202,9 +1191,8 @@
         "Stenaelurillus naldurg"
       ],
       "correct_answer": 2,
-      "predicted_answer": null,
-      "is_correct": false,
-      "error": "No function call found in the response"
+      "predicted_answer": 2,
+      "is_correct": true
     },
     {
       "observation_id": 101874395,
@@ -1227,8 +1215,8 @@
         "Cacyreus lingeus"
       ],
       "correct_answer": 2,
-      "predicted_answer": 2,
-      "is_correct": true
+      "predicted_answer": 1,
+      "is_correct": false
     },
     {
       "observation_id": 106732058,
