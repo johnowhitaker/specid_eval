@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Species identification model evaluator
-Evaluates OpenAI and Gemini models on a species identification task
+Evaluates OpenAI, Gemini, and Grok models on a species identification task
 """
 
 import os
@@ -16,8 +16,10 @@ from datasets import load_dataset
 import google.genai as genai
 from google.genai import types
 from openai import OpenAI
+from xai_sdk import Client
+from xai_sdk.chat import user, image, tool
 
-# Function tool definition
+# Function tool definition for OpenAI/Gemini
 ANSWER_TOOL = {
     "function": {
         "name": "select_answer",
@@ -31,6 +33,21 @@ ANSWER_TOOL = {
         }
     }
 }
+
+# Tool definition for Grok
+GROK_TOOL_DEFINITIONS = [
+    tool(
+        name="select_answer",
+        description="Return the index (0‑4) of the correct species name.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "answer": {"type": "string", "enum": ["0", "1", "2", "3", "4"]}
+            },
+            "required": ["answer"]
+        }
+    )
+]
 
 def ask_openai(img_b64, opts, model_name):
     """Query OpenAI model with image and options"""
@@ -105,6 +122,31 @@ def ask_gemini(img_b64, opts, model_name):
     else:
         raise ValueError("No function call found in the response")
 
+def ask_grok(img_b64, opts, model_name):
+    """Query Grok model with image and options"""
+    client = Client(api_key=os.environ["XAI_API_KEY"])
+    
+    prompt = (
+        "Look at the image and choose the correct species.\n"
+        + "\n".join(f"{i}. {o}" for i, o in enumerate(opts))
+    )
+    
+    chat = client.chat.create(
+        model=model_name,
+        tools=GROK_TOOL_DEFINITIONS,
+        tool_choice="required",
+    )
+    
+    chat.append(user(prompt, image(image_url=f"data:image/jpeg;base64,{img_b64}", detail="high")))
+    response = chat.sample()
+    
+    if response.tool_calls:
+        tool_call = response.tool_calls[0]
+        ans = json.loads(tool_call.function.arguments)["answer"]
+        return int(ans)
+    else:
+        raise ValueError("No tool call found in the response")
+
 def evaluate_model(model_name, num_examples=None, seed=42, output_file=None):
     """
     Evaluate a model on the species identification task
@@ -145,6 +187,8 @@ def evaluate_model(model_name, num_examples=None, seed=42, output_file=None):
             # Choose appropriate model function
             if "gemini" in model_name.lower():
                 predicted_answer = ask_gemini(img_b64, options, model_name)
+            elif "grok" in model_name.lower():
+                predicted_answer = ask_grok(img_b64, options, model_name)
             else:
                 predicted_answer = ask_openai(img_b64, options, model_name)
             
