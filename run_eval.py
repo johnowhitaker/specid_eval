@@ -18,6 +18,7 @@ from google.genai import types
 from openai import OpenAI
 from xai_sdk import Client
 from xai_sdk.chat import user, image, tool
+from huggingface_hub import InferenceClient
 
 # Function tool definition for OpenAI/Gemini
 ANSWER_TOOL = {
@@ -147,6 +148,61 @@ def ask_grok(img_b64, opts, model_name):
     else:
         raise ValueError("No tool call found in the response")
 
+def ask_cohere(img_b64, opts, model_name):
+    """Query Cohere model with image and options"""
+    client = InferenceClient(
+        provider="cohere",
+        api_key=os.environ["HF_TOKEN"],
+    )
+    
+    prompt = (
+        "Look at the image and choose the correct species.\n"
+        + "\n".join(f"{i}. {o}" for i, o in enumerate(opts))
+    )
+    
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            completion = client.chat.completions.create(
+                model=model_name,
+                messages=[
+                    {
+                        "role": "user",
+                        "content": [
+                            {
+                                "type": "text",
+                                "text": prompt
+                            },
+                            {
+                                "type": "image_url",
+                                "image_url": {
+                                    "url": f"data:image/jpeg;base64,{img_b64}"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                tools=[{"type": "function", **ANSWER_TOOL}],
+                tool_choice="auto",
+            )
+            
+            # Extract answer from function call
+            if completion.choices[0].message.tool_calls:
+                call = completion.choices[0].message.tool_calls[0]
+                ans = json.loads(call.function.arguments)["answer"]
+                return int(ans)
+            else:
+                raise ValueError("No function call found in the response")
+            
+        except Exception as e:
+            if "429" in str(e) and attempt < max_retries - 1:
+                # Rate limited, wait and retry
+                wait_time = 2 ** attempt  # Exponential backoff
+                time.sleep(wait_time)
+                continue
+            else:
+                raise e
+
 def evaluate_model(model_name, num_examples=None, seed=42, output_file=None):
     """
     Evaluate a model on the species identification task
@@ -189,6 +245,10 @@ def evaluate_model(model_name, num_examples=None, seed=42, output_file=None):
                 predicted_answer = ask_gemini(img_b64, options, model_name)
             elif "grok" in model_name.lower():
                 predicted_answer = ask_grok(img_b64, options, model_name)
+            elif "cohere" in model_name.lower():
+                predicted_answer = ask_cohere(img_b64, options, model_name)
+                # Add small delay for Cohere to avoid rate limiting
+                time.sleep(0.5)
             else:
                 predicted_answer = ask_openai(img_b64, options, model_name)
             
@@ -238,7 +298,9 @@ def evaluate_model(model_name, num_examples=None, seed=42, output_file=None):
     
     # Save results to file
     if output_file is None:
-        output_file = f"results_{model_name.replace('-', '_').replace('.', '_')}.json"
+        # Clean model name for file path
+        clean_name = model_name.replace('/', '_').replace('-', '_').replace('.', '_')
+        output_file = f"results_{clean_name}.json"
     
     with open(output_file, "w") as f:
         json.dump(evaluation_results, f, indent=2, default=str)
