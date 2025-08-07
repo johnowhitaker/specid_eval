@@ -13,12 +13,6 @@ import io
 import time
 from tqdm import tqdm
 from datasets import load_dataset
-import google.genai as genai
-from google.genai import types
-from openai import OpenAI
-from xai_sdk import Client
-from xai_sdk.chat import user, image, tool
-from huggingface_hub import InferenceClient
 
 # Function tool definition for OpenAI/Gemini
 ANSWER_TOOL = {
@@ -35,20 +29,6 @@ ANSWER_TOOL = {
     }
 }
 
-# Tool definition for Grok
-GROK_TOOL_DEFINITIONS = [
-    tool(
-        name="select_answer",
-        description="Return the index (0‑4) of the correct species name.",
-        parameters={
-            "type": "object",
-            "properties": {
-                "answer": {"type": "string", "enum": ["0", "1", "2", "3", "4"]}
-            },
-            "required": ["answer"]
-        }
-    )
-]
 
 def ask_openai(img_b64, opts, model_name):
     """Query OpenAI model with image and options"""
@@ -75,8 +55,8 @@ def ask_openai(img_b64, opts, model_name):
         model=model_name,
         messages=msgs,
         tools=[{"type": "function", **ANSWER_TOOL}],
-        tool_choice="auto",
-        timeout=30,
+        tool_choice="required",
+        timeout=300,
     )
 
     call = resp.choices[0].message.tool_calls[0]
@@ -213,6 +193,36 @@ def evaluate_model(model_name, num_examples=None, seed=42, output_file=None):
         seed: Random seed for reproducibility
         output_file: File to save results (None = auto-generate)
     """
+    # Import required API based on model name
+    global OpenAI, genai, types, Client, user, image, tool, InferenceClient
+    
+    if "gemini" in model_name.lower():
+        import google.genai as genai
+        from google.genai import types
+    elif "grok" in model_name.lower():
+        from xai_sdk import Client
+        from xai_sdk.chat import user, image, tool
+        
+        # Define Grok tool when needed
+        global GROK_TOOL_DEFINITIONS
+        GROK_TOOL_DEFINITIONS = [
+            tool(
+                name="select_answer",
+                description="Return the index (0‑4) of the correct species name.",
+                parameters={
+                    "type": "object",
+                    "properties": {
+                        "answer": {"type": "string", "enum": ["0", "1", "2", "3", "4"]}
+                    },
+                    "required": ["answer"]
+                }
+            )
+        ]
+    elif "cohere" in model_name.lower():
+        from huggingface_hub import InferenceClient
+    else:  # OpenAI models
+        from openai import OpenAI
+    
     random.seed(seed)
     
     # Load dataset
