@@ -1,7 +1,13 @@
 #!/usr/bin/env python3
 """
 Species identification model evaluator
-Evaluates OpenAI, Gemini, and Grok models on a species identification task
+Evaluates models on a species identification task
+
+Supports:
+- OpenAI (via OpenAI Python SDK)
+- Gemini (native google.genai) or via OpenRouter (OpenAI-compatible)
+- Grok (xAI SDK)
+- Cohere (via HuggingFace InferenceClient)
 """
 
 import os
@@ -12,6 +18,7 @@ import argparse
 import io
 import time
 from tqdm import tqdm
+import re
 from datasets import load_dataset
 
 # Function tool definition for OpenAI/Gemini
@@ -62,6 +69,65 @@ def ask_openai(img_b64, opts, model_name):
     call = resp.choices[0].message.tool_calls[0]
     ans = json.loads(call.function.arguments)["answer"]
     return int(ans)
+
+def ask_openrouter(img_b64, opts, model_name):
+    """Query a model via OpenRouter's OpenAI-compatible API.
+
+    Expects OPENROUTER_API_KEY in environment. Uses OpenAI SDK with custom base_url.
+    Falls back to parsing numeric answer from text if the model doesn't call the tool.
+    """
+    if "OPENROUTER_API_KEY" not in os.environ:
+        raise RuntimeError("OPENROUTER_API_KEY not set for OpenRouter usage")
+
+    # Lazy import to avoid hard dependency when unused
+    from openai import OpenAI
+
+    client = OpenAI(
+        api_key=os.environ["OPENROUTER_API_KEY"],
+        base_url="https://openrouter.ai/api/v1",
+    )
+
+    prompt = (
+        "Look at the image and choose the correct species. "
+        "Respond by calling the function only.\n"
+        + "\n".join(f"{i}. {o}" for i, o in enumerate(opts))
+    )
+    msgs = [
+        {
+            "role": "user",
+            "content": [
+                {"type": "text", "text": prompt},
+                {
+                    "type": "image_url",
+                    "image_url": {"url": f"data:image/jpeg;base64,{img_b64}"}
+                },
+            ],
+        }
+    ]
+
+    # Prefer tool use, but allow auto for broader model support
+    completion = client.chat.completions.create(
+        model=model_name,
+        messages=msgs,
+        tools=[{"type": "function", **ANSWER_TOOL}],
+        tool_choice="auto",
+        timeout=300,
+    )
+
+    choice = completion.choices[0]
+    # If the model used the tool, extract from function args
+    if getattr(choice.message, "tool_calls", None):
+        call = choice.message.tool_calls[0]
+        ans = json.loads(call.function.arguments)["answer"]
+        return int(ans)
+
+    # Fallback: parse the text for a digit 0-4
+    text = (choice.message.content or "").strip()
+    m = re.search(r"\b([0-4])\b", text)
+    if m:
+        return int(m.group(1))
+
+    raise ValueError("Model did not return a tool call or parseable answer")
 
 def ask_gemini(img_b64, opts, model_name):
     """Query Gemini model with image and options"""
@@ -195,8 +261,15 @@ def evaluate_model(model_name, num_examples=None, seed=42, output_file=None):
     """
     # Import required API based on model name
     global OpenAI, genai, types, Client, user, image, tool, InferenceClient
-    
-    if "gemini" in model_name.lower():
+
+    use_openrouter_for_gemini = (
+        "gemini" in model_name.lower() and os.getenv("OPENROUTER_API_KEY")
+    )
+
+    if use_openrouter_for_gemini:
+        # We'll route Gemini models through OpenRouter using OpenAI SDK
+        from openai import OpenAI
+    elif "gemini" in model_name.lower():
         import google.genai as genai
         from google.genai import types
     elif "grok" in model_name.lower():
@@ -251,7 +324,9 @@ def evaluate_model(model_name, num_examples=None, seed=42, output_file=None):
         
         try:
             # Choose appropriate model function
-            if "gemini" in model_name.lower():
+            if use_openrouter_for_gemini:
+                predicted_answer = ask_openrouter(img_b64, options, model_name)
+            elif "gemini" in model_name.lower():
                 predicted_answer = ask_gemini(img_b64, options, model_name)
             elif "grok" in model_name.lower():
                 predicted_answer = ask_grok(img_b64, options, model_name)
