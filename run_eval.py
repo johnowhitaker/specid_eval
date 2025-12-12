@@ -19,6 +19,7 @@ import io
 import time
 from tqdm import tqdm
 import re
+import requests
 from datasets import load_dataset
 
 # Function tool definition for OpenAI/Gemini
@@ -70,7 +71,7 @@ def ask_openai(img_b64, opts, model_name):
     ans = json.loads(call.function.arguments)["answer"]
     return int(ans)
 
-def ask_openrouter(img_b64, opts, model_name):
+def ask_openrouter(img_b64, opts, model_name, reasoning_enabled=False):
     """Query a model via OpenRouter's OpenAI-compatible API.
 
     Expects OPENROUTER_API_KEY in environment. Uses OpenAI SDK with custom base_url.
@@ -78,14 +79,6 @@ def ask_openrouter(img_b64, opts, model_name):
     """
     if "OPENROUTER_API_KEY" not in os.environ:
         raise RuntimeError("OPENROUTER_API_KEY not set for OpenRouter usage")
-
-    # Lazy import to avoid hard dependency when unused
-    from openai import OpenAI
-
-    client = OpenAI(
-        api_key=os.environ["OPENROUTER_API_KEY"],
-        base_url="https://openrouter.ai/api/v1",
-    )
 
     prompt = (
         "Look at the image and choose the correct species. "
@@ -105,24 +98,41 @@ def ask_openrouter(img_b64, opts, model_name):
         }
     ]
 
-    # Prefer tool use, but allow auto for broader model support
-    completion = client.chat.completions.create(
-        model=model_name,
-        messages=msgs,
-        tools=[{"type": "function", **ANSWER_TOOL}],
-        tool_choice="auto",
+    payload = {
+        "model": model_name,
+        "messages": msgs,
+        "tools": [{"type": "function", **ANSWER_TOOL}],
+        "tool_choice": "auto",
+    }
+    if reasoning_enabled:
+        payload["reasoning"] = {"enabled": True}
+
+    resp = requests.post(
+        url="https://openrouter.ai/api/v1/chat/completions",
+        headers={
+            "Authorization": f"Bearer {os.environ['OPENROUTER_API_KEY']}",
+            "Content-Type": "application/json",
+        },
+        data=json.dumps(payload),
         timeout=300,
     )
+    resp.raise_for_status()
+    data = resp.json()
 
-    choice = completion.choices[0]
-    # If the model used the tool, extract from function args
-    if getattr(choice.message, "tool_calls", None):
-        call = choice.message.tool_calls[0]
-        ans = json.loads(call.function.arguments)["answer"]
+    choice = data.get("choices", [{}])[0]
+    message = choice.get("message", {})
+
+    # Tool call path
+    tool_calls = message.get("tool_calls") or []
+    if tool_calls:
+        call = tool_calls[0]
+        fn = call.get("function", {})
+        args = fn.get("arguments", "{}")
+        ans = json.loads(args).get("answer")
         return int(ans)
 
-    # Fallback: parse the text for a digit 0-4
-    text = (choice.message.content or "").strip()
+    # Fallback: parse text content
+    text = (message.get("content") or "").strip()
     m = re.search(r"\b([0-4])\b", text)
     if m:
         return int(m.group(1))
@@ -249,7 +259,7 @@ def ask_cohere(img_b64, opts, model_name):
             else:
                 raise e
 
-def evaluate_model(model_name, num_examples=None, seed=42, output_file=None):
+def evaluate_model(model_name, num_examples=None, seed=42, output_file=None, reasoning=False):
     """
     Evaluate a model on the species identification task
     
@@ -262,14 +272,13 @@ def evaluate_model(model_name, num_examples=None, seed=42, output_file=None):
     # Import required API based on model name
     global OpenAI, genai, types, Client, user, image, tool, InferenceClient
 
-    use_openrouter_for_gemini = (
-        "gemini" in model_name.lower() and os.getenv("OPENROUTER_API_KEY")
+    has_openrouter = bool(os.getenv("OPENROUTER_API_KEY"))
+    use_openrouter_for_gemini = ("gemini" in model_name.lower() and has_openrouter)
+    use_openrouter_default = (
+        has_openrouter and not ("grok" in model_name.lower() or "cohere" in model_name.lower())
     )
 
-    if use_openrouter_for_gemini:
-        # We'll route Gemini models through OpenRouter using OpenAI SDK
-        from openai import OpenAI
-    elif "gemini" in model_name.lower():
+    if (not use_openrouter_for_gemini) and "gemini" in model_name.lower():
         import google.genai as genai
         from google.genai import types
     elif "grok" in model_name.lower():
@@ -324,8 +333,13 @@ def evaluate_model(model_name, num_examples=None, seed=42, output_file=None):
         
         try:
             # Choose appropriate model function
-            if use_openrouter_for_gemini:
-                predicted_answer = ask_openrouter(img_b64, options, model_name)
+            # Route through OpenRouter when available (covers OpenAI and Gemini)
+            if use_openrouter_for_gemini or use_openrouter_default:
+                # Enable reasoning automatically for models known to support it (e.g., gpt-5.2)
+                auto_reasoning = ("gpt-5.2" in model_name)
+                predicted_answer = ask_openrouter(
+                    img_b64, options, model_name, reasoning_enabled=(reasoning or auto_reasoning)
+                )
             elif "gemini" in model_name.lower():
                 predicted_answer = ask_gemini(img_b64, options, model_name)
             elif "grok" in model_name.lower():
@@ -403,6 +417,8 @@ def main():
                         help="Random seed (default: 42)")
     parser.add_argument("--output", type=str, default=None,
                         help="Output file (default: auto-generated)")
+    parser.add_argument("--reasoning", action="store_true", default=False,
+                        help="Enable OpenRouter reasoning (for models like openai/gpt-5.2)")
     
     args = parser.parse_args()
     
@@ -410,7 +426,8 @@ def main():
         model_name=args.model_name,
         num_examples=args.samples,
         seed=args.seed,
-        output_file=args.output
+        output_file=args.output,
+        reasoning=args.reasoning,
     )
 
 if __name__ == "__main__":
