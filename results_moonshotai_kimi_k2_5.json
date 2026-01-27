@@ -1,0 +1,1275 @@
+{
+  "model": "moonshotai/kimi-k2.5",
+  "accuracy": 0.57,
+  "correct": 57,
+  "total": 100,
+  "results": [
+    {
+      "observation_id": 151608054,
+      "options": [
+        "Turnerochrysa mirifica",
+        "Italochrysa impar",
+        "Abachrysa eureka"
+      ],
+      "correct_answer": 1,
+      "predicted_answer": 0,
+      "is_correct": false
+    },
+    {
+      "observation_id": 101874363,
+      "options": [
+        "Hyllus decoratus",
+        "Burmattus pachytibialis",
+        "Taivala invisitata",
+        "Baryphas ahenus",
+        "Pseudamycus flavopubescens"
+      ],
+      "correct_answer": 3,
+      "predicted_answer": 1,
+      "is_correct": false
+    },
+    {
+      "observation_id": 140474048,
+      "options": [
+        "Vicirionessa mustela",
+        "Vicirionessa signata",
+        "Ghatippus paschima",
+        "Orientattus minutus"
+      ],
+      "correct_answer": 0,
+      "predicted_answer": 1,
+      "is_correct": false
+    },
+    {
+      "observation_id": 150809650,
+      "options": [
+        "Mecynorhina romyae",
+        "Heteroclita haworth",
+        "Pedinorrhina plana",
+        "Pedinorrhina trivittata",
+        "Rhomborhina fuscipes"
+      ],
+      "correct_answer": 3,
+      "predicted_answer": 0,
+      "is_correct": false
+    },
+    {
+      "observation_id": 133319210,
+      "options": [
+        "Oecobius navus",
+        "Paroecobius private",
+        "Oecobius interpellator",
+        "Turanobius tadzhikus",
+        "Platoecobius kooch"
+      ],
+      "correct_answer": 0,
+      "predicted_answer": 0,
+      "is_correct": true
+    },
+    {
+      "observation_id": 162709444,
+      "options": [
+        "Isoxya stuhlmanni",
+        "Macracantha arcuata",
+        "Actinacantha globulata",
+        "Gasteracantha milvoides",
+        "Parmatergus lens"
+      ],
+      "correct_answer": 0,
+      "predicted_answer": 3,
+      "is_correct": false
+    },
+    {
+      "observation_id": 106732086,
+      "options": [
+        "Belippo meridionalis",
+        "Myrmarachne marshalli",
+        "Myrmaplata wanlessi",
+        "Hermosa christae",
+        "Myrmapeni penicillata"
+      ],
+      "correct_answer": 1,
+      "predicted_answer": 1,
+      "is_correct": true
+    },
+    {
+      "observation_id": 110092776,
+      "options": [
+        "Aerangis thomsonii",
+        "Tridactyle tridentata",
+        "Listrostachys pertusa",
+        "Afropectinariella doratophylla",
+        "Campylocentrum guarinae"
+      ],
+      "correct_answer": 1,
+      "predicted_answer": 2,
+      "is_correct": false
+    },
+    {
+      "observation_id": 116139957,
+      "options": [
+        "Caenocoris nerii",
+        "Spilostethus amaenus",
+        "Horvathiolus albomacula",
+        "Aethalotus rufangulatus",
+        "Spilostethus furcula"
+      ],
+      "correct_answer": 4,
+      "predicted_answer": 4,
+      "is_correct": true
+    },
+    {
+      "observation_id": 140474022,
+      "options": [
+        "Monolepta cavipennis",
+        "Hoplasoma andrewesi",
+        "Neobarombiella vittigera",
+        "Charaea maxbarclayi",
+        "Trichocneorane lineata"
+      ],
+      "correct_answer": 2,
+      "predicted_answer": 2,
+      "is_correct": true
+    },
+    {
+      "observation_id": 140474054,
+      "options": [
+        "Emertonella serrulata",
+        "Lasaeola canariensis",
+        "Gmogala scarabaeus",
+        "Dipoenata conica",
+        "Euryopis funebris"
+      ],
+      "correct_answer": 4,
+      "predicted_answer": 3,
+      "is_correct": false
+    },
+    {
+      "observation_id": 134599532,
+      "options": [
+        "Chrysocoris abdominalis",
+        "Poecilocoris nigricollis",
+        "Calidea dregii",
+        "Graptophara reynaudii",
+        "Lamprocoris lateralis"
+      ],
+      "correct_answer": 2,
+      "predicted_answer": 4,
+      "is_correct": false
+    },
+    {
+      "observation_id": 112489473,
+      "options": [
+        "Cardioglossa venusta",
+        "Arthroleptis xenochirus",
+        "Arthroleptis stenodactylus"
+      ],
+      "correct_answer": 2,
+      "predicted_answer": 2,
+      "is_correct": true
+    },
+    {
+      "observation_id": 124420856,
+      "options": [
+        "Eurytela dryope",
+        "Mesoxantha ethosea",
+        "Eurytela narinda",
+        "Archimestra teleboas",
+        "Neptidopsis ophione"
+      ],
+      "correct_answer": 0,
+      "predicted_answer": 0,
+      "is_correct": true
+    },
+    {
+      "observation_id": 124868348,
+      "options": [
+        "Asagena pulchra",
+        "Latrodectus geometricus",
+        "Steatoda paykulliana",
+        "Crustulina molesta",
+        "Latrodectus hystrix"
+      ],
+      "correct_answer": 1,
+      "predicted_answer": 1,
+      "is_correct": true
+    },
+    {
+      "observation_id": 107570850,
+      "options": [
+        "Borogonalia impressifrons",
+        "Hortensia similis",
+        "Poecilocarda cosmopolita",
+        "Soosiulus flammidulus",
+        "Anatkina candidipes"
+      ],
+      "correct_answer": 2,
+      "predicted_answer": 2,
+      "is_correct": true
+    },
+    {
+      "observation_id": 124420938,
+      "options": [
+        "Vidua chalybeata",
+        "Vidua purpurascens",
+        "Anomalospiza imberbis"
+      ],
+      "correct_answer": 0,
+      "predicted_answer": 2,
+      "is_correct": false
+    },
+    {
+      "observation_id": 134599528,
+      "options": [
+        "Vicirionessa mustela",
+        "Vicirionessa tergina",
+        "Ghatippus paschima",
+        "Orientattus minutus"
+      ],
+      "correct_answer": 0,
+      "predicted_answer": 0,
+      "is_correct": true
+    },
+    {
+      "observation_id": 106732096,
+      "options": [
+        "Clitaetra episinoides",
+        "Trichonephila fenestrata",
+        "Herennia jernej",
+        "Trichonephila sexpunctata",
+        "Nephilingis dodo"
+      ],
+      "correct_answer": 1,
+      "predicted_answer": 3,
+      "is_correct": false
+    },
+    {
+      "observation_id": 111181602,
+      "options": [
+        "Heterogriffus berlandi",
+        "Stiphropus dentifrons",
+        "Stiphropella gracilis",
+        "Stiphropus affinis"
+      ],
+      "correct_answer": 3,
+      "predicted_answer": 1,
+      "is_correct": false
+    },
+    {
+      "observation_id": 101080359,
+      "options": [
+        "Singa kansuensis",
+        "Enacrosoma decemtuberculatum",
+        "Cercidia prominens",
+        "Araneus apricus",
+        "Mangora gibberosa"
+      ],
+      "correct_answer": 3,
+      "predicted_answer": 2,
+      "is_correct": false
+    },
+    {
+      "observation_id": 101874414,
+      "options": [
+        "Synagris proserpina",
+        "Synagris analis",
+        "Stenodyneriellus maolanensis",
+        "Tricarinodynerus ventralis",
+        "Allorhynchium radiatum"
+      ],
+      "correct_answer": 1,
+      "predicted_answer": 1,
+      "is_correct": true
+    },
+    {
+      "observation_id": 101874374,
+      "options": [
+        "Neocalvia mniszechii",
+        "Adalia kuscheli",
+        "Cheilomenes propinqua",
+        "Neda tredecimsignata"
+      ],
+      "correct_answer": 2,
+      "predicted_answer": 2,
+      "is_correct": true
+    },
+    {
+      "observation_id": 112496693,
+      "options": [
+        "Zebronia phenice",
+        "Maruca fuscalis",
+        "Agathodes isabella",
+        "Arthroschista tricoloralis",
+        "Colomychus talis"
+      ],
+      "correct_answer": 0,
+      "predicted_answer": 0,
+      "is_correct": true
+    },
+    {
+      "observation_id": 107622539,
+      "options": [
+        "Clanga pomarina",
+        "Spizaetus isidori",
+        "Stephanoaetus mahery",
+        "Lophaetus occipitalis",
+        "Nisaetus philippensis"
+      ],
+      "correct_answer": 3,
+      "predicted_answer": 0,
+      "is_correct": false
+    },
+    {
+      "observation_id": 101080350,
+      "options": [
+        "Xystrocera dispar",
+        "Oemodana quadrinotata",
+        "Listrocerum aspericorne",
+        "Tallyrama testacea",
+        "Metallyra wladimirii"
+      ],
+      "correct_answer": 0,
+      "predicted_answer": 0,
+      "is_correct": true
+    },
+    {
+      "observation_id": 140474056,
+      "options": [
+        "Ectrichodia crux",
+        "Mascaregnasa typica",
+        "Brontostoma notatum",
+        "Mendola puellula"
+      ],
+      "correct_answer": 0,
+      "predicted_answer": 0,
+      "is_correct": true
+    },
+    {
+      "observation_id": 106732080,
+      "options": [
+        "Heliocapensis maluti",
+        "Trapezocephalus ndumoensis",
+        "Natta horizontalis",
+        "Ogdenia mutilla",
+        "Matagaia chromatopus"
+      ],
+      "correct_answer": 2,
+      "predicted_answer": 3,
+      "is_correct": false
+    },
+    {
+      "observation_id": 107570960,
+      "options": [
+        "Brownleea graminicola",
+        "Disperis disiformis",
+        "Disperis virginalis"
+      ],
+      "correct_answer": 2,
+      "predicted_answer": 2,
+      "is_correct": true
+    },
+    {
+      "observation_id": 112489466,
+      "options": [
+        "Trioceros rudis",
+        "Nadzikambia mlanjensis",
+        "Rieppeleon kerstenii",
+        "Chamaeleo gracilis",
+        "Rhampholeon marshalli"
+      ],
+      "correct_answer": 4,
+      "predicted_answer": 1,
+      "is_correct": false
+    },
+    {
+      "observation_id": 107303690,
+      "options": [
+        "Herennia gagamba",
+        "Nephilingis cruentata",
+        "Clitaetra perroti",
+        "Nephila cornuta",
+        "Indoetra thisbe"
+      ],
+      "correct_answer": 1,
+      "predicted_answer": 1,
+      "is_correct": true
+    },
+    {
+      "observation_id": 116139883,
+      "options": [
+        "Metatrichia dhimurru",
+        "Metatrichia stevensoni",
+        "Pseudatrichia evergreeni"
+      ],
+      "correct_answer": 1,
+      "predicted_answer": 1,
+      "is_correct": true
+    },
+    {
+      "observation_id": 152114437,
+      "options": [
+        "Ordgarius acanthonotus",
+        "Celaenia calotoides",
+        "Cyrtarachne ixoides",
+        "Mastophora haywardi",
+        "Pasilobus dippenaarae"
+      ],
+      "correct_answer": 2,
+      "predicted_answer": 1,
+      "is_correct": false
+    },
+    {
+      "observation_id": 116139996,
+      "options": [
+        "Buphonella nigroviolacea",
+        "Gastrida concolor",
+        "Gastrida abdominalis"
+      ],
+      "correct_answer": 2,
+      "predicted_answer": 0,
+      "is_correct": false
+    },
+    {
+      "observation_id": 107303700,
+      "options": [
+        "Parmatergus lens",
+        "Isoxya cicatricosa",
+        "Gasteracantha doriae",
+        "Austracantha minax",
+        "Isoxya tabulata"
+      ],
+      "correct_answer": 4,
+      "predicted_answer": 4,
+      "is_correct": true
+    },
+    {
+      "observation_id": 101080386,
+      "options": [
+        "Idiothele nigrofulva",
+        "Pterinochilus cryptus",
+        "Brachionopus annulatus",
+        "Bacillochilus xenostridulans",
+        "Idiothele mira"
+      ],
+      "correct_answer": 0,
+      "predicted_answer": 4,
+      "is_correct": false
+    },
+    {
+      "observation_id": 129646734,
+      "options": [
+        "Hippotion celerio",
+        "Pergesa acteus",
+        "Phanoxyla kitchingi",
+        "Theretra japonica",
+        "Hippotion rosetta"
+      ],
+      "correct_answer": 0,
+      "predicted_answer": 3,
+      "is_correct": false
+    },
+    {
+      "observation_id": 116139933,
+      "options": [
+        "Cyrtophora citricola",
+        "Cyrtobill darwini",
+        "Manogea gaira",
+        "Cyrtophora gemmosa",
+        "Kapogea cyrtophoroides"
+      ],
+      "correct_answer": 0,
+      "predicted_answer": 0,
+      "is_correct": true
+    },
+    {
+      "observation_id": 124420866,
+      "options": [
+        "Eurydiopsis sarawakensis",
+        "Eosiopsis orientalis",
+        "Diasemopsis signata",
+        "Diasemopsis obstans",
+        "Diopsis aterrima"
+      ],
+      "correct_answer": 2,
+      "predicted_answer": 4,
+      "is_correct": false
+    },
+    {
+      "observation_id": 151608038,
+      "options": [
+        "Phintella aequipes",
+        "Kupiuka paulista",
+        "Helafricanus decempunctatus",
+        "Epocilla aurantiaca",
+        "Pseudicius icioides"
+      ],
+      "correct_answer": 0,
+      "predicted_answer": 2,
+      "is_correct": false
+    },
+    {
+      "observation_id": 116139761,
+      "options": [
+        "Ocimum grandiflorum",
+        "Syncolostemon floccosus",
+        "Orthosiphon vernalis",
+        "Syncolostemon bracteosus",
+        "Catoferia spicata"
+      ],
+      "correct_answer": 3,
+      "predicted_answer": 3,
+      "is_correct": true
+    },
+    {
+      "observation_id": 134599498,
+      "options": [
+        "Felsina granulum",
+        "Avelis hystriculus",
+        "Parabomis levanderi",
+        "Thomisops pupa",
+        "Bomis hippoponoi"
+      ],
+      "correct_answer": 3,
+      "predicted_answer": 3,
+      "is_correct": true
+    },
+    {
+      "observation_id": 106732060,
+      "options": [
+        "Azuragrion nigridorsum",
+        "Anisagrion truncatipenne",
+        "Mesamphiagrion tepuianum",
+        "Enallagma doubledayi",
+        "Oxyallagma dissidens"
+      ],
+      "correct_answer": 0,
+      "predicted_answer": 1,
+      "is_correct": false
+    },
+    {
+      "observation_id": 134599490,
+      "options": [
+        "Dryoscopus sabini",
+        "Rhodophoneus cruentus",
+        "Chlorophoneus bocagei",
+        "Tchagra australis",
+        "Bocagia minuta"
+      ],
+      "correct_answer": 3,
+      "predicted_answer": 3,
+      "is_correct": true
+    },
+    {
+      "observation_id": 140474052,
+      "options": [
+        "Schaenicoscelis leucochlora",
+        "Hostus paroculus",
+        "Oxyopes flavipalpis",
+        "Pseudohostus squamosus",
+        "Tapponia micans"
+      ],
+      "correct_answer": 2,
+      "predicted_answer": 4,
+      "is_correct": false
+    },
+    {
+      "observation_id": 116139945,
+      "options": [
+        "Gastrida abdominalis",
+        "Buphonella nigroviolacea",
+        "Gastrida viridicoerulea"
+      ],
+      "correct_answer": 0,
+      "predicted_answer": 1,
+      "is_correct": false
+    },
+    {
+      "observation_id": 107303689,
+      "options": [
+        "Cacyreus dicksoni",
+        "Harpendyreus meruana",
+        "Cacyreus lingeus"
+      ],
+      "correct_answer": 2,
+      "predicted_answer": 2,
+      "is_correct": true
+    },
+    {
+      "observation_id": 116140025,
+      "options": [
+        "Uracis fastigiata",
+        "Leucorrhinia proxima",
+        "Aethriamanta brevipennis",
+        "Trithemis arteriosa",
+        "Pachydiplax longipennis"
+      ],
+      "correct_answer": 3,
+      "predicted_answer": 3,
+      "is_correct": true
+    },
+    {
+      "observation_id": 107303692,
+      "options": [
+        "Anomalobuthus lowei",
+        "Vachoniolus iranus",
+        "Australobuthus xerolimniorum",
+        "Afrolychas burdoi",
+        "Rhopalurus caribensis"
+      ],
+      "correct_answer": 3,
+      "predicted_answer": 4,
+      "is_correct": false
+    },
+    {
+      "observation_id": 151608035,
+      "options": [
+        "Popillia bipunctata",
+        "Popillia mutans",
+        "Dactylopopillia virescens",
+        "Macropopillia arrowi"
+      ],
+      "correct_answer": 0,
+      "predicted_answer": 1,
+      "is_correct": false
+    },
+    {
+      "observation_id": 151608022,
+      "options": [
+        "Herila herilus",
+        "Ceratrichia fako",
+        "Meza meza",
+        "Acada biseriata",
+        "Pardaleodes tibullus"
+      ],
+      "correct_answer": 3,
+      "predicted_answer": 2,
+      "is_correct": false
+    },
+    {
+      "observation_id": 134599522,
+      "options": [
+        "Parantica rotundata",
+        "Ideopsis oberthurii",
+        "Danaus chrysippus",
+        "Tiradelphe schneideri",
+        "Tirumala euploeomorpha"
+      ],
+      "correct_answer": 2,
+      "predicted_answer": 2,
+      "is_correct": true
+    },
+    {
+      "observation_id": 106732053,
+      "options": [
+        "Euxanthe wakefieldi",
+        "Eriboea guderiana",
+        "Zingha zingha",
+        "Setechin nichetes",
+        "Ydeali lydiae"
+      ],
+      "correct_answer": 1,
+      "predicted_answer": 0,
+      "is_correct": false
+    },
+    {
+      "observation_id": 140474055,
+      "options": [
+        "Phintella aequipes",
+        "Okinawicius sindbadi",
+        "Psenuc hongkong",
+        "Augustaea formicaria",
+        "Nandicius vallisflorum"
+      ],
+      "correct_answer": 0,
+      "predicted_answer": 0,
+      "is_correct": true
+    },
+    {
+      "observation_id": 109212082,
+      "options": [
+        "Rubraea eltringhamiana",
+        "Actinote alcione",
+        "Tildia barberi",
+        "Telchinia serena",
+        "Pardopsis punctatissima"
+      ],
+      "correct_answer": 3,
+      "predicted_answer": 3,
+      "is_correct": true
+    },
+    {
+      "observation_id": 152370933,
+      "options": [
+        "Bunopus tuberculatus",
+        "Alsophylax przewalskii",
+        "Rhoptropella ocellata",
+        "Heteronotia binoei",
+        "Hemidactylus mabouia"
+      ],
+      "correct_answer": 4,
+      "predicted_answer": 4,
+      "is_correct": true
+    },
+    {
+      "observation_id": 107303677,
+      "options": [
+        "Calxattus dengba",
+        "Paracyrba wanlessi",
+        "Portia schultzi",
+        "Spartaeus pinniformis",
+        "Gelotia liuae"
+      ],
+      "correct_answer": 2,
+      "predicted_answer": 1,
+      "is_correct": false
+    },
+    {
+      "observation_id": 124420915,
+      "options": [
+        "Telchinia serena",
+        "Rubraea onerata",
+        "Tildia oscari",
+        "Pardopsis punctatissima",
+        "Acraea eugenia"
+      ],
+      "correct_answer": 0,
+      "predicted_answer": 0,
+      "is_correct": true
+    },
+    {
+      "observation_id": 103260747,
+      "options": [
+        "Megistophylla andrewesi",
+        "Melolontha albida",
+        "Eulepida mbala",
+        "Pegylis sommeri"
+      ],
+      "correct_answer": 3,
+      "predicted_answer": 3,
+      "is_correct": true
+    },
+    {
+      "observation_id": 106732057,
+      "options": [
+        "Demogenes conivulvus",
+        "Cymbachina albobrunnea",
+        "Parasynema cirripes",
+        "Phireza sexmaculata",
+        "Diaea puncta"
+      ],
+      "correct_answer": 4,
+      "predicted_answer": 4,
+      "is_correct": true
+    },
+    {
+      "observation_id": 134599489,
+      "options": [
+        "Thinornis tricollaris",
+        "Oreopholus ruficollis",
+        "Hoploxypterus cayanus",
+        "Charadrius hiaticula",
+        "Thinornis placidus"
+      ],
+      "correct_answer": 0,
+      "predicted_answer": 0,
+      "is_correct": true
+    },
+    {
+      "observation_id": 124420875,
+      "options": [
+        "Parajotus refulgens",
+        "Baryphas ahenus",
+        "Afrobeata magnifica",
+        "Epeus albus",
+        "Plexippoides tristis"
+      ],
+      "correct_answer": 1,
+      "predicted_answer": 1,
+      "is_correct": true
+    },
+    {
+      "observation_id": 140474033,
+      "options": [
+        "Singa haddooensis",
+        "Cyclosa insulana",
+        "Kaira cobimcha",
+        "Larinia mandlaensis",
+        "Araniella maasdorpi"
+      ],
+      "correct_answer": 1,
+      "predicted_answer": 1,
+      "is_correct": true
+    },
+    {
+      "observation_id": 106732093,
+      "options": [
+        "Latrodectus geometricus",
+        "Asagena medialis",
+        "Steatoda castanea",
+        "Latrodectus renivulvatus",
+        "Crustulina starmuehlneri"
+      ],
+      "correct_answer": 0,
+      "predicted_answer": 0,
+      "is_correct": true
+    },
+    {
+      "observation_id": 106732051,
+      "options": [
+        "Alaena nyassa",
+        "Alaena oberthuri",
+        "Phytala elais",
+        "Mimeresia unyoro",
+        "Durbaniella clarki"
+      ],
+      "correct_answer": 0,
+      "predicted_answer": 0,
+      "is_correct": true
+    },
+    {
+      "observation_id": 130300602,
+      "options": [
+        "Rubraea acrita",
+        "Actinote lapitha",
+        "Telchinia orinata",
+        "Rubraea niobe"
+      ],
+      "correct_answer": 0,
+      "predicted_answer": 2,
+      "is_correct": false
+    },
+    {
+      "observation_id": 116139993,
+      "options": [
+        "Mononeda marginata",
+        "Declivitata inclusa",
+        "Calvia chinensis",
+        "Coccinella saucerottii",
+        "Cheilomenes sulphurea"
+      ],
+      "correct_answer": 4,
+      "predicted_answer": 2,
+      "is_correct": false
+    },
+    {
+      "observation_id": 107303695,
+      "options": [
+        "Ischnothele goloboffi",
+        "Andethele tarma",
+        "Thelechoris striatipes",
+        "Thelechoris rutenbergi",
+        "Indothele lanka"
+      ],
+      "correct_answer": 2,
+      "predicted_answer": 2,
+      "is_correct": true
+    },
+    {
+      "observation_id": 101874410,
+      "options": [
+        "Eupeodes vandergooti",
+        "Syrphus ribesii",
+        "Ischiodon aegyptius",
+        "Orphnabaccha coeruleus"
+      ],
+      "correct_answer": 2,
+      "predicted_answer": 2,
+      "is_correct": true
+    },
+    {
+      "observation_id": 107303681,
+      "options": [
+        "Phintella argentea",
+        "Paraheliophanus jeanae",
+        "Orsima constricta",
+        "Menemerus placidus",
+        "Natta horizontalis"
+      ],
+      "correct_answer": 4,
+      "predicted_answer": 2,
+      "is_correct": false
+    },
+    {
+      "observation_id": 124350211,
+      "options": [
+        "Tachygyna gargopa",
+        "Panamomops affinis",
+        "Cnephalocotes ferrugineus",
+        "Trichopterna krueperi",
+        "Ostearius melanopygius"
+      ],
+      "correct_answer": 4,
+      "predicted_answer": 2,
+      "is_correct": false
+    },
+    {
+      "observation_id": 140474037,
+      "options": [
+        "Pignus lautissimum",
+        "Philaeus daoxianensis",
+        "Tusitala lutzi",
+        "Mogrus logunovi",
+        "Pignus simoni"
+      ],
+      "correct_answer": 4,
+      "predicted_answer": 4,
+      "is_correct": true
+    },
+    {
+      "observation_id": 103260740,
+      "options": [
+        "Aliteus reichei",
+        "Alaus latipennis",
+        "Phibisa viossati",
+        "Thoramus feredayi",
+        "Neocalais curtipennis"
+      ],
+      "correct_answer": 0,
+      "predicted_answer": 1,
+      "is_correct": false
+    },
+    {
+      "observation_id": 150564906,
+      "options": [
+        "Leptorchestes separatus",
+        "Kima variabilis",
+        "Paramarpissa albopilosa",
+        "Pseudomogrus logunovi",
+        "Marusyllus mongolicus"
+      ],
+      "correct_answer": 1,
+      "predicted_answer": 0,
+      "is_correct": false
+    },
+    {
+      "observation_id": 154398926,
+      "options": [
+        "Celaenia calotoides",
+        "Cyrtarachne ixoides",
+        "Ordgarius pustulosus",
+        "Paraplectana duodecimmaculata",
+        "Cyrtarachne conica"
+      ],
+      "correct_answer": 1,
+      "predicted_answer": 3,
+      "is_correct": false
+    },
+    {
+      "observation_id": 116139912,
+      "options": [
+        "Apotrigona nebulata",
+        "Plebeina armata",
+        "Hypotrigona araujoi",
+        "Frieseomelitta languida"
+      ],
+      "correct_answer": 1,
+      "predicted_answer": 1,
+      "is_correct": true
+    },
+    {
+      "observation_id": 124420936,
+      "options": [
+        "Yoma algina",
+        "Precis limnoria",
+        "Junonia westermanni",
+        "Hypolimnas dimona",
+        "Precis antilope"
+      ],
+      "correct_answer": 4,
+      "predicted_answer": 4,
+      "is_correct": true
+    },
+    {
+      "observation_id": 101080311,
+      "options": [
+        "Cortyta diapera",
+        "Calligraphidia perexcurvata",
+        "Rhabdophera hansali",
+        "Pericyma minyas",
+        "Pericyma mendax"
+      ],
+      "correct_answer": 4,
+      "predicted_answer": 4,
+      "is_correct": true
+    },
+    {
+      "observation_id": 124420925,
+      "options": [
+        "Trithemis aconita",
+        "Perithemis rubita",
+        "Micrathyria aequalis",
+        "Trithemis annulata",
+        "Aethriamanta circumsignata"
+      ],
+      "correct_answer": 3,
+      "predicted_answer": 3,
+      "is_correct": true
+    },
+    {
+      "observation_id": 124420920,
+      "options": [
+        "Acada biseriata",
+        "Ceratrichia brunnea",
+        "Meza elba",
+        "Acada annulifer",
+        "Pardaleodes edipus"
+      ],
+      "correct_answer": 0,
+      "predicted_answer": 4,
+      "is_correct": false
+    },
+    {
+      "observation_id": 124420846,
+      "options": [
+        "Megatriorchis doriae",
+        "Urotriorchis macrourus",
+        "Accipiter poliogaster",
+        "Kaupifalco monogrammicus",
+        "Tachyspiza melanochlamys"
+      ],
+      "correct_answer": 3,
+      "predicted_answer": 3,
+      "is_correct": true
+    },
+    {
+      "observation_id": 106732070,
+      "options": [
+        "Theridion bicruciatum",
+        "Nihonhimea tikaderi",
+        "Paidiscura dromedaria",
+        "Seycellesa braueri",
+        "Phylloneta impressa"
+      ],
+      "correct_answer": 0,
+      "predicted_answer": 4,
+      "is_correct": false
+    },
+    {
+      "observation_id": 116139964,
+      "options": [
+        "Arthrorhabdus paucispinus",
+        "Asanada lindbergi",
+        "Notiasemus glauerti",
+        "Cormocephalus brachycerus",
+        "Scolopendra morsitans"
+      ],
+      "correct_answer": 4,
+      "predicted_answer": 4,
+      "is_correct": true
+    },
+    {
+      "observation_id": 108645000,
+      "options": [
+        "Brachycorythis disoides",
+        "Stenoglottis fimbriata",
+        "Megalorchis regalis",
+        "Veyretella flabellata",
+        "Dactylorhiza incarnata"
+      ],
+      "correct_answer": 1,
+      "predicted_answer": 1,
+      "is_correct": true
+    },
+    {
+      "observation_id": 154398933,
+      "options": [
+        "Eutichurus paredesi",
+        "Cheiracanthium furculatum",
+        "Strotarchus tlaloc",
+        "Cheiracanthium gracile",
+        "Sinocanthium shuangqiu"
+      ],
+      "correct_answer": 1,
+      "predicted_answer": 1,
+      "is_correct": true
+    },
+    {
+      "observation_id": 106732045,
+      "options": [
+        "Macracantha arcuata",
+        "Gasteracantha doriae",
+        "Afracantha camerunensis",
+        "Isoxya stuhlmanni",
+        "Thelacantha brevispina"
+      ],
+      "correct_answer": 3,
+      "predicted_answer": 1,
+      "is_correct": false
+    },
+    {
+      "observation_id": 124868350,
+      "options": [
+        "Helocassis clavata",
+        "Hybosa insculpta",
+        "Cteisella amicta",
+        "Hovacassis flavonigra",
+        "Chiridopsis nigrosepta"
+      ],
+      "correct_answer": 4,
+      "predicted_answer": 0,
+      "is_correct": false
+    },
+    {
+      "observation_id": 106732062,
+      "options": [
+        "Rafalus feliksi",
+        "Langona fusca",
+        "Phanuelus gladstone",
+        "Stenaelurillus termitophagus",
+        "Phlegra lineata"
+      ],
+      "correct_answer": 3,
+      "predicted_answer": 3,
+      "is_correct": true
+    },
+    {
+      "observation_id": 154398929,
+      "options": [
+        "Cyrtognatha bryantae",
+        "Tetragnatha valida",
+        "Tetragnatha subsquamata"
+      ],
+      "correct_answer": 2,
+      "predicted_answer": 1,
+      "is_correct": false
+    },
+    {
+      "observation_id": 124420943,
+      "options": [
+        "Cynathea obliterata",
+        "Firmicus bragantinus",
+        "Firmicus werneri",
+        "Camaricus castaneiceps"
+      ],
+      "correct_answer": 1,
+      "predicted_answer": 1,
+      "is_correct": true
+    },
+    {
+      "observation_id": 83153470,
+      "options": [
+        "Arthroleptis xenodactyloides",
+        "Arthroleptis kidogo",
+        "Cardioglossa elegans"
+      ],
+      "correct_answer": 0,
+      "predicted_answer": null,
+      "is_correct": false,
+      "error": "Expecting value: line 175 column 1 (char 957)"
+    },
+    {
+      "observation_id": 83153412,
+      "options": [
+        "Zizeeria labradus",
+        "Pseudozizeeria maha",
+        "Zizina emelina",
+        "Zizeeria knysna"
+      ],
+      "correct_answer": 3,
+      "predicted_answer": 3,
+      "is_correct": true
+    },
+    {
+      "observation_id": 124420850,
+      "options": [
+        "Anthobaphes violacea",
+        "Nectarinia bocagii",
+        "Cyanomitra oritis",
+        "Chalcomitra senegalensis",
+        "Leptocoma brasiliana"
+      ],
+      "correct_answer": 3,
+      "predicted_answer": 3,
+      "is_correct": true
+    },
+    {
+      "observation_id": 140474029,
+      "options": [
+        "Proszynskiana deserticola",
+        "Rafalus arabicus",
+        "Stenaelurillus guttatus",
+        "Phanuelus gladstone",
+        "Stenaelurillus naldurg"
+      ],
+      "correct_answer": 2,
+      "predicted_answer": 4,
+      "is_correct": false
+    },
+    {
+      "observation_id": 101874395,
+      "options": [
+        "Kupiuka murici",
+        "Cosmophasis thalassina",
+        "Nepalicius seychellensis",
+        "Phintella aequipes",
+        "Theriella tenuistyli"
+      ],
+      "correct_answer": 3,
+      "predicted_answer": 3,
+      "is_correct": true
+    },
+    {
+      "observation_id": 151608034,
+      "options": [
+        "Harpendyreus marlieri",
+        "Cacyreus palemon",
+        "Cacyreus lingeus"
+      ],
+      "correct_answer": 2,
+      "predicted_answer": 2,
+      "is_correct": true
+    },
+    {
+      "observation_id": 106732058,
+      "options": [
+        "Actenoides monachus",
+        "Halcyon leucocephala",
+        "Melidora macrorrhina",
+        "Pelargopsis melanorhyncha",
+        "Cittura sanghirensis"
+      ],
+      "correct_answer": 1,
+      "predicted_answer": 1,
+      "is_correct": true
+    },
+    {
+      "observation_id": 151623487,
+      "options": [
+        "Tyria jacobaeae",
+        "Kishidaria khasiana",
+        "Haploa contigua",
+        "Dodia diaphana",
+        "Secusio strigata"
+      ],
+      "correct_answer": 4,
+      "predicted_answer": 4,
+      "is_correct": true
+    },
+    {
+      "observation_id": 124420893,
+      "options": [
+        "Cyanomitra verticalis",
+        "Nectarinia bocagii",
+        "Drepanorhynchus reichenowi",
+        "Hedydipna collaris",
+        "Cinnyris venustus"
+      ],
+      "correct_answer": 4,
+      "predicted_answer": 4,
+      "is_correct": true
+    },
+    {
+      "observation_id": 101080365,
+      "options": [
+        "Pantala flavescens",
+        "Pseudothemis jorina",
+        "Perithemis cornelia",
+        "Trithemis stictica",
+        "Tramea minuta"
+      ],
+      "correct_answer": 0,
+      "predicted_answer": 0,
+      "is_correct": true
+    }
+  ]
+}
